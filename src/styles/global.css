@@ -1,0 +1,17 @@
+:root {
+   --white: ##F8F8F8;
+   --off-white: ##F7F7F7;
+   --black: ##1A1A1A;
+   --yellow: #FEFD02;
+   --light-yellow: #FCF929;
+   --background: #222021;
+   --light-gray: ##7E7E7E;
+ }
+
+ html {
+   overflow: scroll;
+ }
+ ::-webkit-scrollbar {
+   width: 0px;
+   background: transparent;
+ }
