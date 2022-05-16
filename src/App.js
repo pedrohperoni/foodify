@@ -3,6 +3,8 @@ import Account from "./pages/Account";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
 import SignUp from "./pages/SignUp";
+import "./styles/reset.css"
+import "./styles/global.css"
 
 
 function App() {
