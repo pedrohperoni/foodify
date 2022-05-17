@@ -11,6 +11,8 @@ const HeaderContainer = styled.header`
   top: 0;
   color: var(--white);
   overflow: hidden;
+  z-index: 100;
+  background-color: var(--background);
 
   div{
    display: flex;
@@ -26,6 +28,7 @@ const HeaderContainer = styled.header`
      border-top-right-radius: 50px;
      background-color:var(--white);
   }
+
 `;
 
 export default HeaderContainer;
