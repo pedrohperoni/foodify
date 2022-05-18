@@ -1,11 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700&family=Poppins:wght@100;200;300;400;500;700&family=Roboto:wght@100;300;400;500;700;900&display=swap');
 :root {
    --white: #F8F8F8;
    --off-white: #F7F7F7;
    --black: #1A1A1A;
    --yellow: #FEFD02;
    --light-yellow: #FCF929;
-   --background: #222021;
-   --light-gray: #7E7E7E;
+   --background: #121418;
+   --light-gray: #939599;
+   --dark-gray: #222222;
  }
 
  html {
@@ -23,4 +25,12 @@
  a{
     text-decoration: none;
     color: var(--white);
+ }
+
+ h1{
+    font-family: 'Poppins', sans-serif;
+ }
+
+ *{
+   font-family: 'Roboto', sans-serif;
  }
