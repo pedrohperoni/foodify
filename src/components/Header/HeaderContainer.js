@@ -14,21 +14,34 @@ const HeaderContainer = styled.header`
   z-index: 100;
   background-color: var(--background);
 
-  div{
-   display: flex;
-   align-items: center;
-   justify-content: center;
-   gap: 20px;
+  a {
+    text-decoration: none;
+    color: var(--white);
+
+    &:hover {
+      text-decoration: underline;
+    }
   }
 
-  span{
-     height: 40px;
-     width: 20px;
-     border-bottom-right-radius: 50px;
-     border-top-right-radius: 50px;
-     background-color:var(--white);
+  div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
   }
 
+  p {
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+  }
+
+  span {
+    height: 40px;
+    width: 20px;
+    border-bottom-right-radius: 50px;
+    border-top-right-radius: 50px;
+    background-color: var(--white);
+  }
 `;
 
 export default HeaderContainer;

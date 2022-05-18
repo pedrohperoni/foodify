@@ -21,6 +21,14 @@ const Button = styled.button`
   font-weight: 500;
   font-size: 1em;
 
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  svg{
+     margin-right: 10px;
+  }
+
   &:focus {
     outline: none;
   }

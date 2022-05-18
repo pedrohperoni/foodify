@@ -10,6 +10,14 @@ const Form = styled.form`
   color: #000;
   width: 400px;
   padding: 20px;
+
+  p{
+     margin: 10px;
+     font-weight: 500;
+      color: var(--white);
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.9em;
+   }
 `;
 
 

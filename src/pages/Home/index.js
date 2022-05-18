@@ -7,10 +7,14 @@ import {
   TopTrend,
 } from "../../components/HomeComponents";
 import api from "../../services/api";
+import useAuth from "../../hooks/useAuth.js"
+
 
 export default function Home() {
   const [data, setData] = useState("");
   const [url, setUrl] = useState("");
+  const {user} = useAuth();
+
 
   function handleSubmit() {
     const promise = api.getFoodData({ url: url });

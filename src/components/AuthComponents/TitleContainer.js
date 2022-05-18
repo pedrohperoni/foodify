@@ -20,6 +20,8 @@ const TitleContainer = styled.div`
       font-family: 'Montserrat', sans-serif;
       color: var(--light-gray);
       font-weight:500;
+
+
    }
 
 `
