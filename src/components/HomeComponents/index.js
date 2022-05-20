@@ -10,6 +10,7 @@ import DataContainer from "./DataContainer";
 import Tag from "./Tag";
 import DescriptionInput from "./DescriptionInput";
 import CreateTagInput from "./CreateTagInput";
+import Container from "./Container"
 
 export {
   HomeContainer,
@@ -23,5 +24,6 @@ export {
   DataContainer, 
   Tag,
   DescriptionInput,
-  CreateTagInput
+  CreateTagInput,
+  Container
 };

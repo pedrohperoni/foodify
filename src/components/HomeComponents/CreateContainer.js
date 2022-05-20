@@ -1,38 +1,139 @@
+import { useState } from "react";
 import styled from "styled-components";
+import {
+  Form,
+  Input,
+  DataContainer,
+  DescriptionInput,
+  CreateTagInput,
+  Button,
+  Tag,
+  Container
+} from "./index.js";
+import api from "../../services/api";
+import { IoCloseOutline, IoAdd } from "react-icons/io5";
+import { FiEdit } from "react-icons/fi";
+import { FormWarning } from "../../components/AuthComponents";
 
-const CreateContainer = styled.div`
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  background-color: #232325;
-  width: 100%;
-  border-radius: 10px;
-  padding: 10px;
-  color: var(--white);
+function CreateContainer() {
+  const [url, setUrl] = useState("");
+  const [tags, setTags] = useState([]);
+  const [description, setDescription] = useState("");
+  const [imageActive, setImageActive] = useState(false);
+  const [newTag, setNewTag] = useState("");
 
-  img {
-    margin: 10px 0;
-    width: auto;
-    max-width: 100%;
-    max-height: 400px;
-    border-radius: 10px;
+  function handleSubmit() {
+    const promise = api.getFoodData({ url: url });
+    promise.then((response) => {
+      setDescription(response.data.description);
+      setTags(response.data.tags);
+      setImageActive(true);
+    });
+    promise.catch((err) => {
+      console.log(err);
+    });
   }
 
-  p {
-    font-weight: bold;
-    margin: 15px 0 5px 0;
+  function createNewTag(e) {
+    e.preventDefault();
+    const tagsArray = [...tags];
+    if (newTag.length > 0 && !tagsArray.includes(newTag)) {
+      tagsArray.push(newTag);
+    }
 
+    setTags(tagsArray);
+    setNewTag("");
   }
 
-  span{
-     font-weight: normal;
+  function handleTagDeletion(e) {
+    const tagsArray = [...tags];
+    const index = tagsArray.indexOf(e);
+    if (index !== -1) {
+      tagsArray.splice(index, 1);
+    }
+
+    setTags(tagsArray);
   }
 
-  h1{
-     margin-top: 20px;
-     font-size:1.5em;
-     
+  function resetStates() {
+    setDescription("");
+    setUrl("");
+    setTags([]);
+    setImageActive(false);
+    setNewTag("");
   }
-`;
+
+  const expression =
+    /[-a-zA-Z0-9@:%._+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_+.~#?&//=]*)?/gi;
+  const regex = new RegExp(expression);
+
+  return (
+    <Container>
+      {/* <DropZone /> */}
+      <h1>Enter your food image URL</h1>
+      <Form>
+        <Input
+          value={url}
+          placeholder="Image URL"
+          type="text"
+          onChange={(e) => setUrl(e.target.value)}
+        />
+      </Form>
+      {url.match(regex) ? (
+        <>
+          <img src={url} alt="Oops... try a valid URL" />
+          {imageActive ? (
+            <>
+              <DataContainer>
+                <p>
+                  Title:
+                  <DescriptionInput
+                    id="description"
+                    placeholder={description}
+                    value={description}
+                    onChange={(e) => setDescription(e.target.value)}
+                  />
+                  <label htmlFor="description">
+                    <FiEdit />
+                  </label>
+                </p>
+
+                {tags.map((tag) => (
+                  <Tag key={tag} onClick={() => handleTagDeletion(tag)}>
+                    {tag} <IoCloseOutline size="1.2em" />
+                  </Tag>
+                ))}
+
+                <Tag>
+                  <CreateTagInput
+                    id="create"
+                    value={newTag}
+                    test={newTag.length}
+                    onChange={(e) => setNewTag(e.target.value)}
+                  />
+                  <form onSubmit={createNewTag}>
+                    <label htmlFor="create">
+                      <IoAdd onClick={createNewTag} size="1.2em" />
+                    </label>
+                  </form>
+                </Tag>
+              </DataContainer>
+              <Button>Submit Post</Button>
+            </>
+          ) : (
+            <Button type="button" onClick={(e) => handleSubmit(e)}>
+              Get tags and Description
+            </Button>
+          )}
+          <Button type="button" color="dark" onClick={resetStates}>
+            Try Another One
+          </Button>
+        </>
+      ) : (
+        url.length > 0 && <FormWarning>Must be a valid image url!</FormWarning>
+      )}
+    </Container>
+  );
+}
 
 export default CreateContainer;
