@@ -27,12 +27,15 @@ export default function Header({ page }) {
       <div>
         {user !== undefined ? (
           <>
+          <p>{user.name}</p>
             <Link to={`/settings/account/${user.userId}`}>
               <BiUser color="white" size="1.5em" />
             </Link>
+
             <Link onClick={() => handleLogout()} to="/login">
               <IoLogOutOutline color="white" size="1.7em" />
             </Link>
+
           </>
         ) : (
           <>

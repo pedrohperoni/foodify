@@ -19,14 +19,21 @@ const Button = styled.button`
   text-align: left;
   font-family: "Montserrat", sans-serif;
   font-weight: 500;
-  font-size: 1em;
+  font-size: 0.9em;
 
   display: flex;
   align-items: center;
   justify-content: space-between;
+  cursor: pointer;
+  &:hover{
+     opacity: 0.9;
+  }
 
-  svg{
-     margin-right: 10px;
+  pointer-events: ${(props) => (props.enabled ? "all" : "none")};
+  opacity: ${(props) => (props.enabled ? "1.0" : "0.5")};
+
+  svg {
+    margin-right: 10px;
   }
 
   &:focus {

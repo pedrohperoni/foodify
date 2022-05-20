@@ -18,6 +18,14 @@ const Form = styled.form`
       font-family: 'Montserrat', sans-serif;
       font-size: 0.9em;
    }
+
+   a{
+      color: rgba(32, 195, 161, 1);
+
+      &:hover{
+         text-decoration: underline
+      }
+   }
 `;
 
 

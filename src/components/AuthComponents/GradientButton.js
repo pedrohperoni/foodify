@@ -22,7 +22,10 @@ const GradientButton = styled.button`
   text-align: left;
   font-family: "Montserrat", sans-serif;
   font-weight: 500;
-  font-size: 1em;
+  font-size: 0.9em;
+
+  display: flex;
+  align-items: center;
 
   cursor: pointer;
   &:hover {
@@ -38,6 +41,10 @@ const GradientButton = styled.button`
   a {
     text-decoration: none;
     color: var(--white);
+  }
+
+  svg{
+     margin-right: 6px;
   }
 `;
 

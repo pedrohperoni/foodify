@@ -8,12 +8,12 @@ import {
   TitleContainer,
 } from "../../components/AuthComponents";
 import Header from "../../components/Header";
-import { BsArrowRight } from "react-icons/bs";
 import { Link, useNavigate } from "react-router-dom";
 import api from "../../services/api.js";
 import { useState, useEffect } from "react";
-import useAuth from "../../hooks/useAuth.js"
+import useAuth from "../../hooks/useAuth.js";
 
+import { BsGoogle, BsApple, BsArrowRight } from "react-icons/bs";
 
 export default function Login() {
   const [email, setEmail] = useState("");
@@ -21,11 +21,9 @@ export default function Login() {
   const navigate = useNavigate();
   const { login, userData } = useAuth();
 
-  useEffect(() => {
-   (localStorage.getItem("auth") !== null) && navigate("/")
-},[navigate])
-
-
+//   useEffect(() => {
+//     localStorage.getItem("auth") !== null && navigate("/");
+//   }, [navigate]);
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -36,14 +34,13 @@ export default function Login() {
     };
     const promise = api.login(data);
     promise.then((response) => {
-       login(response.data.token)
-       userData({name: response.data.name, userId: response.data.userId})
-       navigate("/");
-
+      login(response.data.token);
+      userData({ name: response.data.name, userId: response.data.userId });
+      navigate("/");
     });
     promise.catch((error) => {
-       console.log(error)
-    })
+      console.log(error);
+    });
   }
 
   return (
@@ -70,8 +67,8 @@ export default function Login() {
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               required
-             />
-            <Button onClick={handleSubmit} type="submit">
+            />
+            <Button onClick={handleSubmit} type="submit" enabled={true}>
               Login to your account <BsArrowRight size="2em" />
             </Button>
           </Form>
@@ -82,8 +79,8 @@ export default function Login() {
             <GradientButton>
               <Link to="/signup"> Register a new account</Link>
             </GradientButton>
-            <GradientButton>Sign in with google</GradientButton>
-            <GradientButton>Sign in with google</GradientButton>
+            <GradientButton><BsGoogle size="1.4em" />Sign in with google</GradientButton>
+            <GradientButton><BsApple size="1.4em" />Sign in with apple</GradientButton>
           </Form>
         </FormContainer>
       </AuthPageContainer>
