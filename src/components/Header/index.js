@@ -6,7 +6,6 @@ import { BiUser } from "react-icons/bi";
 import { Link } from "react-router-dom";
 import StyledText from "./StyledText";
 
-
 export default function Header({ page }) {
   const { logout, user } = useAuth();
   const navigate = useNavigate();
@@ -20,14 +19,14 @@ export default function Header({ page }) {
       <div>
         <span />
         <Link to="/">
-          <p>FOODIFY</p>
+          <h1>FOODIFY</h1>
         </Link>
       </div>
 
       <div>
-        {user !== undefined ? (
+        {user ? (
           <>
-          <p>{user.name}</p>
+            <p>{user.name.charAt(0).toUpperCase() + user.name.slice(1)}</p>
             <Link to={`/settings/account/${user.userId}`}>
               <BiUser color="white" size="1.5em" />
             </Link>
@@ -35,7 +34,6 @@ export default function Header({ page }) {
             <Link onClick={() => handleLogout()} to="/login">
               <IoLogOutOutline color="white" size="1.7em" />
             </Link>
-
           </>
         ) : (
           <>
@@ -46,7 +44,7 @@ export default function Header({ page }) {
               <p>Login</p>
             </Link>
             <Link to="/signup">
-            <StyledText color="cyan">SignUp</StyledText>
+              <StyledText color="cyan">SignUp</StyledText>
             </Link>
           </>
         )}

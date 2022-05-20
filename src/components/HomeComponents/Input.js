@@ -12,7 +12,7 @@ const Input = styled.input`
   margin-top: 15px;
   margin-bottom: 10px;
   font-family: "Montserrat", sans-serif;
-  box-shadow: 0 0 0.1em var(--white);
+  box-shadow: 0 0 0.1em rgba(32, 195, 161, 1);
 
   &:focus {
     outline: none;
@@ -20,7 +20,7 @@ const Input = styled.input`
   ::placeholder {
     font-family: "Montserrat", sans-serif;
     font-weight: 500;
-    color: var(--white);
+    color: rgba(32, 195, 161, 1);
   }
 `;
 

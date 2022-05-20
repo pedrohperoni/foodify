@@ -18,6 +18,11 @@ const Container = styled.div`
     border-radius: 10px;
   }
 
+  strong{
+     color: rgba(32, 195, 161, 1);
+     font-weight: 500;
+  }
+
   p {
     font-weight: bold;
     margin: 15px 0 5px 0;

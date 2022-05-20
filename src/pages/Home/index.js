@@ -1,3 +1,8 @@
+import { useEffect } from "react";
+import useAuth from "../../hooks/useAuth.js";
+import api from "../../services/api.js";
+import { useNavigate } from "react-router-dom";
+
 import Header from "../../components/Header";
 import {
   MainContainer,
@@ -8,6 +13,18 @@ import {
 } from "../../components/HomeComponents";
 
 export default function Home() {
+  const { auth } = useAuth();
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    api
+      .validateJWT(auth)
+      .then((response) => {})
+      .catch((err) => {
+        navigate("/login");
+      });
+  }, [auth, navigate]);
+
   return (
     <>
       <Header />

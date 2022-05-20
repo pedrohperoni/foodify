@@ -23,6 +23,10 @@ const HeaderContainer = styled.header`
     }
   }
 
+  h1 {
+    color: rgba(32, 195, 161, 1);
+    font-weight: bold;
+  }
   div {
     display: flex;
     align-items: center;
@@ -40,7 +44,7 @@ const HeaderContainer = styled.header`
     width: 20px;
     border-bottom-right-radius: 50px;
     border-top-right-radius: 50px;
-    background-color: var(--white);
+    background-color: rgba(32, 195, 161, 1);
   }
 `;
 

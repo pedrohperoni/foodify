@@ -1,5 +1,4 @@
 import { useState } from "react";
-import styled from "styled-components";
 import {
   Form,
   Input,
@@ -70,7 +69,7 @@ function CreateContainer() {
   return (
     <Container>
       {/* <DropZone /> */}
-      <h1>Enter your food image URL</h1>
+      <h1>Enter your <strong>food</strong> image URL</h1>
       <Form>
         <Input
           value={url}

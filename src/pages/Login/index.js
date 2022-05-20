@@ -10,7 +10,7 @@ import {
 import Header from "../../components/Header";
 import { Link, useNavigate } from "react-router-dom";
 import api from "../../services/api.js";
-import { useState, useEffect } from "react";
+import { useState} from "react";
 import useAuth from "../../hooks/useAuth.js";
 
 import { BsGoogle, BsApple, BsArrowRight } from "react-icons/bs";
@@ -21,9 +21,6 @@ export default function Login() {
   const navigate = useNavigate();
   const { login, userData } = useAuth();
 
-//   useEffect(() => {
-//     localStorage.getItem("auth") !== null && navigate("/");
-//   }, [navigate]);
 
   function handleSubmit(e) {
     e.preventDefault();
