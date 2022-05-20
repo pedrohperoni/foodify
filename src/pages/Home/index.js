@@ -11,6 +11,8 @@ import {
   TopTrend,
   CreateContainer,
 } from "../../components/HomeComponents";
+import Posts from "../../components/Posts/index.js";
+
 
 export default function Home() {
   const { auth } = useAuth();
@@ -32,14 +34,17 @@ export default function Home() {
         <Sidebar />
         <MainContainer>
           <CreateContainer />
+          <Posts />
         </MainContainer>
         <Sidebar>
           <TopTrend>
             <img
-              src="https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
-              alt="salmon"
+              src=""
+              alt="top trend img"
             />
-            <p>Salmon</p>
+            <p>#1 tag</p>
+            <span>#2 tag</span>
+            <span>#3 tag</span>
           </TopTrend>
         </Sidebar>
       </HomeContainer>

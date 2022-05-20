@@ -3,7 +3,7 @@ import styled from "styled-components";
 const TopTrend = styled.div`
   width: 100%;
   height: 200px;
-  border-radius: 20px;
+  border-radius: 10px;
   display:flex;
   align-items: center;
   justify-content: space-between;
@@ -20,7 +20,7 @@ const TopTrend = styled.div`
   }
 
   img {
-    border-radius: 20px;
+    border-radius: 10px;
    width: 100%;
    height: auto;
    max-height: 85%;

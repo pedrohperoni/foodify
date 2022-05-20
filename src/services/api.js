@@ -31,12 +31,17 @@ async function createPost(body){
    return await axios.post(`${BASE_URL}/posts/create`, body)
 }
 
+async function getPosts(){
+   return await axios.get(`${BASE_URL}/posts`)
+}
+
 const api = {
   getFoodData,
   login,
   signUp,
   validateJWT,
   createPost,
+  getPosts
 };
 
 export default api;

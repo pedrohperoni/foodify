@@ -51,9 +51,12 @@ function CreateContainer() {
      const promise = api.createPost(post);
      promise.then((response) => {
         console.log(response);
+        resetStates()
      })
      promise.catch((err) => {
         console.log(err);
+        alert("We had an error trying to create the post, please try again later")
+        resetStates()
      })
   }
 

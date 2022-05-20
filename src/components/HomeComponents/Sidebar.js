@@ -6,7 +6,7 @@ const Sidebar = styled.div`
    display: flex;
    align-items: center;
    flex-direction: column;
-   border-radius:20px;
+   border-radius:10px;
 `  
 
 export default Sidebar

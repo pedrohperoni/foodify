@@ -10,13 +10,13 @@
    --dark-gray: #222222;
  }
 
- html {
+ /* html {
    overflow: scroll;
  }
  ::-webkit-scrollbar {
    width: 0px;
    background: transparent;
- }
+ } */
 
  body{
     background-color: var(--background)
