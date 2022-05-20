@@ -8,7 +8,7 @@ const CreateTagInput = styled.input`
   height: 100%;
   padding: 0 1px;
   font-size:1em;
-  width: ${(props) => `${props.test*7}px`};
+  width: ${(props) => `${props.wordlength*8.5}px`};
 
   &:focus {
     outline: none;

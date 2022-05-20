@@ -10,16 +10,16 @@ function createConfig(token) {
   };
 }
 
-async function getFoodData(data) {
-  return await axios.post(`${BASE_URL}/clarifai/food`, data);
+async function getFoodData(body) {
+  return await axios.post(`${BASE_URL}/clarifai/food`, body);
 }
 
-async function login(data) {
-  return await axios.post(`${BASE_URL}/auth/login`, data);
+async function login(body) {
+  return await axios.post(`${BASE_URL}/auth/login`, body);
 }
 
-async function signUp(data) {
-  return await axios.post(`${BASE_URL}/users/create`, data);
+async function signUp(body) {
+  return await axios.post(`${BASE_URL}/users/create`, body);
 }
 
 async function validateJWT(token) {
@@ -27,11 +27,16 @@ async function validateJWT(token) {
   return axios.post(`${BASE_URL}/auth/token`, {}, config);
 }
 
+async function createPost(body){
+   return await axios.post(`${BASE_URL}/posts/create`, body)
+}
+
 const api = {
   getFoodData,
   login,
   signUp,
   validateJWT,
+  createPost,
 };
 
 export default api;

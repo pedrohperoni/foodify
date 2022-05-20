@@ -7,6 +7,8 @@ export function AuthProvider({ children }) {
   const [auth, setAuth] = useState(persistedAuth);
   const [user, setUser] = useState();
 
+  console.log(user)
+
 
   function login(authData) {
     setAuth(authData);
