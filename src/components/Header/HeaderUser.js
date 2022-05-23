@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const HeaderUser = styled.div`
-  height: 50px;
+  height: 45px;
   border-radius: 100px;
   background-color: #232325;
   display: flex;
@@ -16,15 +16,15 @@ p{
 }
 
   a {
-    height: 40px;
-    width: 40px;
+    height: 37px;
+    width: 37px;
     border-radius: 50px;
   }
 
   img {
-    height: 100%;
-    width: 100%;
-    object-fit: cover;
+    height: 100% !important;
+    width: 100% !important;
+    object-fit: cover !important;
     border-radius: 50px;
   }
 `;

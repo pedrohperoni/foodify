@@ -29,7 +29,6 @@ const UserContainer = styled.div`
     color: var(--white);
     font-size: 0.9em;
     font-family: "Poppins", sans-serif;
-    margin-bottom: 20px;
     text-align: center;
     word-break: break-word;
   }

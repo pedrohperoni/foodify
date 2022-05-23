@@ -47,6 +47,12 @@ const HeaderContainer = styled.header`
     background-color: rgba(32, 195, 161, 1);
   }
 
+  img {
+    height: 20px;
+    width: auto;
+    border-radius: 3px;
+  }
+
 
 `;
 

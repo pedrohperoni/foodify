@@ -24,11 +24,11 @@ function CreatePost() {
   const [imageActive, setImageActive] = useState(false);
   const [newTag, setNewTag] = useState("");
   const [imageDataLoading, setImageDataLoading] = useState(false);
-  const { user } = useAuth();
+  const { user, auth } = useAuth();
 
   function handleSubmit() {
     setImageDataLoading(true);
-    const promise = api.getFoodData({ url: url });
+    const promise = api.getFoodData({ url: url }, auth);
     promise.then((response) => {
       setDescription(response.data.description);
       setTags(response.data.tags);
@@ -49,7 +49,7 @@ function CreatePost() {
       description,
     };
     
-    const promise = api.createPost(post);
+    const promise = api.createPost(post, auth);
     promise.then((response) => {
       console.log(response);
       resetStates();
@@ -155,10 +155,10 @@ function CreatePost() {
               </Button>
             </>
           ) : imageDataLoading ? (
-            <PuffLoader color="rgba(32, 195, 161, 1)" size="10em" />
+            <PuffLoader color="rgba(32, 195, 161, 1)" size="5em" />
           ) : (
             <Button type="button" onClick={(e) => handleSubmit(e)}>
-              Get tags and Description
+              Analyze
             </Button>
           )}
           <Button type="button" color="dark" onClick={resetStates}>

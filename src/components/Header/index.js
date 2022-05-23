@@ -5,6 +5,12 @@ import { IoLogOutOutline } from "react-icons/io5";
 import { Link } from "react-router-dom";
 import StyledText from "./StyledText";
 import HeaderUser from "./HeaderUser";
+// import clarifai from "../../assets/clarifai.png";
+// import prisma from "../../assets/prisma.png";
+// import unsplash from "../../assets/unsplash.png";
+// import react from "../../assets/react.png";
+// import nodejs from "../../assets/nodejs.png";
+// import typescript from "../../assets/typescript.png";
 
 export default function Header({ page }) {
   const { logout, user } = useAuth();
@@ -22,6 +28,52 @@ export default function Header({ page }) {
           <h1>FOODIFY</h1>
         </Link>
       </div>
+      {/* 
+      <div>
+        <a
+          href="https://docs.clarifai.com/"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          <img src={clarifai} alt="Clarifai" />
+        </a>
+        <a
+          href="https://unsplash.com/documentation"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          <img src={unsplash} alt="Unsplash" />
+        </a>
+        <a
+          href="https://reactjs.org/"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          <img src={react} alt="React" />
+        </a>
+        <a
+          href="https://nodejs.org/en/"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          <img src={nodejs} alt="NodeJs" />
+        </a>
+        <a
+          href="https://www.prisma.io/"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          <img src={prisma} alt="Prisma" />
+        </a>
+
+        <a
+          href="https://www.typescriptlang.org/"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          <img src={typescript} alt="Typescript" />
+        </a>
+      </div> */}
 
       <div>
         {user ? (

@@ -1,6 +1,8 @@
 import axios from "axios";
 
-const BASE_URL = "http://localhost:5000";
+// const BASE_URL = "http://localhost:5000";
+// const BASE_URL = "https://git.heroku.com/yfidoof.git"
+const BASE_URL = "https://yfidoof.herokuapp.com"
 
 function createConfig(token) {
   return {
@@ -10,8 +12,9 @@ function createConfig(token) {
   };
 }
 
-async function getFoodData(body) {
-  return await axios.post(`${BASE_URL}/clarifai/food`, body);
+async function getFoodData(body, token) {
+   const config = createConfig(token);
+  return await axios.post(`${BASE_URL}/clarifai/food`, body, config);
 }
 
 async function login(body) {
@@ -27,8 +30,9 @@ async function validateJWT(token) {
   return axios.post(`${BASE_URL}/auth/token`, {}, config);
 }
 
-async function createPost(body) {
-  return await axios.post(`${BASE_URL}/posts/create`, body);
+async function createPost(body, token) {
+   const config = createConfig(token);
+  return await axios.post(`${BASE_URL}/posts/create`, body, config);
 }
 
 async function getPosts() {
@@ -39,8 +43,9 @@ async function getTopTags(number) {
   return await axios.get(`${BASE_URL}/tags/top${number}`);
 }
 
-async function getRandomUnsplashImage(image) {
- return await axios.post(`${BASE_URL}/unsplash/${image}`);
+async function getRandomUnsplashImage(image, token) {
+   const config = createConfig(token);
+ return await axios.post(`${BASE_URL}/unsplash/${image}`, image, config);
 }
 
 const api = {
