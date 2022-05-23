@@ -22,8 +22,8 @@ export default function Account() {
     }
   }, []);
 
-  function handleSubmit(){
-     alert("Feature Under Construction")
+  function handleSubmit() {
+    alert("Feature Under Construction");
   }
 
   return (
