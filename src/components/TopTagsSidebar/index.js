@@ -28,10 +28,7 @@ export default function TopTagsSidebar() {
           <div>
             <TrophySpan ranking="first">
               <p>🏆</p>
-              <h1>
-                {topTags[0].name.charAt(0).toUpperCase() +
-                  topTags[0].name.slice(1)}
-              </h1>
+              <h1>#{topTags[0].name}</h1>
             </TrophySpan>
 
             <p>{topTags[0].score}</p>
@@ -39,11 +36,7 @@ export default function TopTagsSidebar() {
 
           <div>
             <TrophySpan ranking="second">
-              <p>🥈</p>{" "}
-              <h2>
-                {topTags[1].name.charAt(0).toUpperCase() +
-                  topTags[1].name.slice(1)}
-              </h2>
+              <p>🥈</p> <h2>#{topTags[1].name}</h2>
             </TrophySpan>
 
             <p>{topTags[1].score}</p>
@@ -51,11 +44,7 @@ export default function TopTagsSidebar() {
 
           <div>
             <TrophySpan>
-              <p>🥉</p>{" "}
-              <h3>
-                {topTags[2].name.charAt(0).toUpperCase() +
-                  topTags[2].name.slice(1)}
-              </h3>
+              <p>🥉</p>#<h3>{topTags[2].name}</h3>
             </TrophySpan>
 
             <p>{topTags[2].score}</p>

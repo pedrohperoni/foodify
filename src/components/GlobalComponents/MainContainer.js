@@ -5,7 +5,7 @@ const MainContainer = styled.div`
    display: flex;
    align-items: center;
    flex-direction: column;
-   gap: 20px;
+   gap: 10px;
 
 `
 

@@ -7,7 +7,7 @@ const Container = styled.div`
   background-color: #232325;
   width: 100%;
   border-radius: 10px;
-  padding: 10px;
+  padding: 10px 0 20px 0;
   color: var(--white);
 
   img {

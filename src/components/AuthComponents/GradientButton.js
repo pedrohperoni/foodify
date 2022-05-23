@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const GradientButton = styled.button`
-  width: 90%;
+  width: 100%;
   height: 57px;
   border-radius: 5px;
 

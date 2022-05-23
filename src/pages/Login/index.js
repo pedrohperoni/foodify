@@ -84,17 +84,21 @@ export default function Login() {
         <span>/</span>
         <FormContainer>
           <Form>
-            <GradientButton>
-              <Link to="/signup"> Register a new account</Link>
-            </GradientButton>
-            <GradientButton>
-              <BsGoogle size="1.4em" />
-              Sign in with google
-            </GradientButton>
-            <GradientButton>
-              <BsApple size="1.4em" />
-              Sign in with apple
-            </GradientButton>
+            <Link to="/signup">
+              <GradientButton> Register a new account </GradientButton>
+            </Link>
+            <Link to="/signup">
+              <GradientButton>
+                <BsGoogle size="1.4em" />
+                Sign in with google
+              </GradientButton>
+            </Link>
+            <Link to="/signup">
+              <GradientButton>
+                <BsApple size="1.4em" />
+                Sign in with apple
+              </GradientButton>
+            </Link>
           </Form>
         </FormContainer>
       </AuthPageContainer>

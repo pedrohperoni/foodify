@@ -15,6 +15,7 @@ import { FiEdit } from "react-icons/fi";
 import { FormWarning } from "../../components/AuthComponents";
 import PuffLoader from "react-spinners/PuffLoader";
 import useAuth from "../../hooks/useAuth.js";
+import CreatePostImage from "./CreatePostImage";
 
 function CreatePost() {
   const [url, setUrl] = useState("");
@@ -47,6 +48,7 @@ function CreatePost() {
       tags,
       description,
     };
+    
     const promise = api.createPost(post);
     promise.then((response) => {
       console.log(response);
@@ -111,7 +113,7 @@ function CreatePost() {
       </Form>
       {url.match(regex) ? (
         <>
-          <img src={url} alt="Oops... try a valid URL" />
+        <CreatePostImage src={url} alt="Oops.. try a valid URL" />
           {imageActive ? (
             <>
               <DataContainer>

@@ -12,6 +12,7 @@ import {
 import Posts from "../../components/Posts/index.js";
 import CreatePost from "../../components/CreatePost/index.js";
 import TopTagsSidebar from "../../components/TopTagsSidebar/index.js";
+import UserSidebar from "../../components/UserSidebar/index.js";
 
 export default function Home() {
   const { auth, user } = useAuth();
@@ -33,7 +34,7 @@ export default function Home() {
     <>
       <Header />
       <HomeContainer>
-        <Sidebar />
+        <UserSidebar />
         <MainContainer>
           <CreatePost />
           <Posts />

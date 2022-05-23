@@ -20,6 +20,7 @@ const Form = styled.form`
    }
 
    a{
+      width: 90%;
       color: rgba(32, 195, 161, 1);
 
       &:hover{

@@ -25,11 +25,12 @@ const Post = styled.div`
     font-weight: 600;
     font-family: "Roboto", sans-serif;
     margin-bottom: 5px;
+    word-break: break-word;
   }
 
   h2 {
-    font-weight: 300;
-    font-size: 1em;
+    font-weight: 500;
+    font-size: 1.1em;
     margin-bottom: 5px;
     color: rgba(32, 195, 161, 1);
   }

@@ -7,12 +7,12 @@ const HeaderUser = styled.div`
   display: flex;
   align-items: center;
   justify-content: left !important;
-  padding: 5px;
+  padding: 4px;
   gap: 10px !important;
 
 
 p{
-   margin-right: 3px;
+   margin-right: 6px;
 }
 
   a {
