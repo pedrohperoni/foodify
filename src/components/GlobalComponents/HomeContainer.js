@@ -5,6 +5,10 @@ const HomeContainer = styled.main`
   display: flex;
   justify-content: center;
   gap: 20px;
+
+  @media(max-width: 1200px){
+   flex-direction: column;
+  }
 `;
 
 export default HomeContainer;

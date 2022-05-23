@@ -40,6 +40,10 @@ const TopTags = styled.div`
     max-height: 85%;
     margin-bottom: 10px;
   }
+
+  @media(max-width: 1200px){
+   display: none;
+  }
 `;
 
 export default TopTags;

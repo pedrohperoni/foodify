@@ -6,7 +6,7 @@ border-top: 1px solid var(--light-gray);
 border-bottom: 1px solid var(--light-gray);
 display: flex;
 align-items: center;
-justify-content: center;
+justify-content: space-around;
 flex-direction: row;
 height: 80px;
 margin-bottom: 10px;

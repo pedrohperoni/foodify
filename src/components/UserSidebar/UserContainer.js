@@ -32,6 +32,10 @@ const UserContainer = styled.div`
     text-align: center;
     word-break: break-word;
   }
+
+  @media(max-width: 1200px){
+   gap: 5px;
+  }
 `;
 
 export default UserContainer;
