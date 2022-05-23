@@ -2,9 +2,9 @@ import useAuth from "../../hooks/useAuth";
 import { useNavigate } from "react-router";
 import HeaderContainer from "./HeaderContainer";
 import { IoLogOutOutline } from "react-icons/io5";
-import { BiUser } from "react-icons/bi";
 import { Link } from "react-router-dom";
 import StyledText from "./StyledText";
+import HeaderUser from "./HeaderUser";
 
 export default function Header({ page }) {
   const { logout, user } = useAuth();
@@ -26,10 +26,12 @@ export default function Header({ page }) {
       <div>
         {user ? (
           <>
-            <p>{user.name.charAt(0).toUpperCase() + user.name.slice(1)}</p>
-            <Link to={`/settings/account/${user.userId}`}>
-              <BiUser color="white" size="1.5em" />
-            </Link>
+            <HeaderUser>
+              <Link to={`/settings/account/${user.userId}`}>
+                <img src={user.profileUrl} alt="user" />
+              </Link>
+              <p>{user.name.charAt(0).toUpperCase() + user.name.slice(1)}</p>
+            </HeaderUser>
 
             <Link onClick={() => handleLogout()} to="/login">
               <IoLogOutOutline color="white" size="1.7em" />

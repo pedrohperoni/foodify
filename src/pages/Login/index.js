@@ -10,7 +10,7 @@ import {
 import Header from "../../components/Header";
 import { Link, useNavigate } from "react-router-dom";
 import api from "../../services/api.js";
-import { useState} from "react";
+import { useEffect, useState } from "react";
 import useAuth from "../../hooks/useAuth.js";
 
 import { BsGoogle, BsApple, BsArrowRight } from "react-icons/bs";
@@ -19,8 +19,13 @@ export default function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
-  const { login, userData } = useAuth();
+  const { login, userData, user, auth } = useAuth();
 
+  useEffect(() => {
+    if (user && auth) {
+      navigate("/");
+    }
+  });
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -31,8 +36,14 @@ export default function Login() {
     };
     const promise = api.login(data);
     promise.then((response) => {
+      console.log(response.data);
       login(response.data.token);
-      userData({ name: response.data.name, userId: response.data.userId });
+      userData({
+        name: response.data.name,
+        userId: response.data.userId,
+        backgroundUrl: response.data.backgroundUrl,
+        profileUrl: response.data.profileUrl,
+      });
       navigate("/");
     });
     promise.catch((error) => {
@@ -76,8 +87,14 @@ export default function Login() {
             <GradientButton>
               <Link to="/signup"> Register a new account</Link>
             </GradientButton>
-            <GradientButton><BsGoogle size="1.4em" />Sign in with google</GradientButton>
-            <GradientButton><BsApple size="1.4em" />Sign in with apple</GradientButton>
+            <GradientButton>
+              <BsGoogle size="1.4em" />
+              Sign in with google
+            </GradientButton>
+            <GradientButton>
+              <BsApple size="1.4em" />
+              Sign in with apple
+            </GradientButton>
           </Form>
         </FormContainer>
       </AuthPageContainer>

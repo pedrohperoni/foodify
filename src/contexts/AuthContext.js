@@ -4,25 +4,25 @@ const AuthContext = createContext();
 
 export function AuthProvider({ children }) {
   const persistedAuth = JSON.parse(localStorage.getItem("auth"));
+  const persistedUser = JSON.parse(localStorage.getItem("user"));
   const [auth, setAuth] = useState(persistedAuth);
-  const [user, setUser] = useState();
-
-  console.log(user)
-
+  const [user, setUser] = useState(persistedUser);
 
   function login(authData) {
     setAuth(authData);
     localStorage.setItem("auth", JSON.stringify(authData));
   }
 
-  function logout() {
-    localStorage.removeItem("auth");
-    setUser()
-    setAuth()
-  }
-
   function userData(userData) {
     setUser(userData);
+    localStorage.setItem("user", JSON.stringify(userData));
+  }
+
+  function logout() {
+    localStorage.removeItem("auth");
+    localStorage.removeItem("user");
+    setUser();
+    setAuth();
   }
 
   return (

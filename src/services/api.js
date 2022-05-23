@@ -27,12 +27,20 @@ async function validateJWT(token) {
   return axios.post(`${BASE_URL}/auth/token`, {}, config);
 }
 
-async function createPost(body){
-   return await axios.post(`${BASE_URL}/posts/create`, body)
+async function createPost(body) {
+  return await axios.post(`${BASE_URL}/posts/create`, body);
 }
 
-async function getPosts(){
-   return await axios.get(`${BASE_URL}/posts`)
+async function getPosts() {
+  return await axios.get(`${BASE_URL}/posts`);
+}
+
+async function getTopTags(number) {
+  return await axios.get(`${BASE_URL}/tags/top${number}`);
+}
+
+async function getRandomUnsplashImage(image) {
+ return await axios.post(`${BASE_URL}/unsplash/${image}`);
 }
 
 const api = {
@@ -41,7 +49,9 @@ const api = {
   signUp,
   validateJWT,
   createPost,
-  getPosts
+  getPosts,
+  getTopTags,
+  getRandomUnsplashImage,
 };
 
 export default api;

@@ -46,6 +46,8 @@ const HeaderContainer = styled.header`
     border-top-right-radius: 50px;
     background-color: rgba(32, 195, 161, 1);
   }
+
+
 `;
 
 export default HeaderContainer;

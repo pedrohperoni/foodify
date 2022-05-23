@@ -18,8 +18,10 @@ export default function SignUp() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
+  const [profileUrl, setProfileUrl] = useState("");
   const [name, setName] = useState("");
   const [emailValidation, setEmailValidation] = useState(false);
+  const [profileWarning, setProfileWarning] = useState(false);
   const navigate = useNavigate();
 
   const handleEmailChange = (e) => {
@@ -40,6 +42,10 @@ export default function SignUp() {
       confirmPassword,
       name,
     };
+
+    if (profileUrl !== "") {
+      data.profileUrl = profileUrl;
+    }
     console.log(data);
     const promise = api.signUp(data);
     promise.then((response) => {
@@ -82,6 +88,21 @@ export default function SignUp() {
               onChange={(e) => setName(e.target.value)}
               required
             />
+            <Input
+              type="text"
+              name="profileUrl"
+              placeholder="Profile URL (not required but...)"
+              value={profileUrl}
+              onChange={(e) => setProfileUrl(e.target.value)}
+              onFocus={(e) => setProfileWarning(true)}
+              onBlur={(e) => setProfileWarning(false)}
+              required
+            />
+            {profileWarning && (
+              <FormWarning>
+                Not required but your photo will be random😈
+              </FormWarning>
+            )}
             <Input
               type="password"
               name="password"

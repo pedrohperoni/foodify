@@ -8,25 +8,25 @@ import {
   Button,
   Tag,
   Container,
-} from "./index.js";
+} from "../GlobalComponents";
 import api from "../../services/api";
 import { IoCloseOutline, IoAdd } from "react-icons/io5";
 import { FiEdit } from "react-icons/fi";
 import { FormWarning } from "../../components/AuthComponents";
 import PuffLoader from "react-spinners/PuffLoader";
-import useAuth from "../../hooks/useAuth.js"
+import useAuth from "../../hooks/useAuth.js";
 
-function CreateContainer() {
+function CreatePost() {
   const [url, setUrl] = useState("");
   const [tags, setTags] = useState([]);
   const [description, setDescription] = useState("");
   const [imageActive, setImageActive] = useState(false);
   const [newTag, setNewTag] = useState("");
-  const [imageDataLoading, setImageDataLoading] = useState(false)
-  const {user} = useAuth();
+  const [imageDataLoading, setImageDataLoading] = useState(false);
+  const { user } = useAuth();
 
   function handleSubmit() {
-     setImageDataLoading(true)
+    setImageDataLoading(true);
     const promise = api.getFoodData({ url: url });
     promise.then((response) => {
       setDescription(response.data.description);
@@ -40,24 +40,25 @@ function CreateContainer() {
     });
   }
 
-  function createPost(){
-     const post = {
-        imageUrl: url,
-        userId: user.userId,
-        tags,
-        description
-
-     }
-     const promise = api.createPost(post);
-     promise.then((response) => {
-        console.log(response);
-        resetStates()
-     })
-     promise.catch((err) => {
-        console.log(err);
-        alert("We had an error trying to create the post, please try again later")
-        resetStates()
-     })
+  function createPost() {
+    const post = {
+      imageUrl: url,
+      userId: user.userId,
+      tags,
+      description,
+    };
+    const promise = api.createPost(post);
+    promise.then((response) => {
+      console.log(response);
+      resetStates();
+    });
+    promise.catch((err) => {
+      console.log(err);
+      alert(
+        "We had an error trying to create the post, please try again later"
+      );
+      resetStates();
+    });
   }
 
   function createNewTag(e) {
@@ -87,10 +88,8 @@ function CreateContainer() {
     setTags([]);
     setImageActive(false);
     setNewTag("");
-    setImageDataLoading(false)
+    setImageDataLoading(false);
   }
-
-
 
   const expression =
     /[-a-zA-Z0-9@:%._+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_+.~#?&//=]*)?/gi;
@@ -149,9 +148,13 @@ function CreateContainer() {
                   </form>
                 </Tag>
               </DataContainer>
-              <Button type="submit" onClick={createPost}>Submit Post</Button>
+              <Button type="submit" onClick={createPost}>
+                Submit Post
+              </Button>
             </>
-          ) : imageDataLoading ? <PuffLoader color="rgba(32, 195, 161, 1)" size="10em" /> : (
+          ) : imageDataLoading ? (
+            <PuffLoader color="rgba(32, 195, 161, 1)" size="10em" />
+          ) : (
             <Button type="button" onClick={(e) => handleSubmit(e)}>
               Get tags and Description
             </Button>
@@ -163,10 +166,8 @@ function CreateContainer() {
       ) : (
         url.length > 0 && <FormWarning>Must be a valid image url!</FormWarning>
       )}
-      
-      
     </Container>
   );
 }
 
-export default CreateContainer;
+export default CreatePost;

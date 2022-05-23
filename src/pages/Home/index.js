@@ -8,17 +8,19 @@ import {
   MainContainer,
   HomeContainer,
   Sidebar,
-  TopTrend,
-  CreateContainer,
-} from "../../components/HomeComponents";
+} from "../../components/GlobalComponents";
 import Posts from "../../components/Posts/index.js";
-
+import CreatePost from "../../components/CreatePost/index.js";
+import TopTagsSidebar from "../../components/TopTagsSidebar/index.js";
 
 export default function Home() {
-  const { auth } = useAuth();
+  const { auth, user } = useAuth();
   const navigate = useNavigate();
 
   useEffect(() => {
+    if (!user) {
+      navigate("/login");
+    }
     api
       .validateJWT(auth)
       .then((response) => {})
@@ -33,20 +35,10 @@ export default function Home() {
       <HomeContainer>
         <Sidebar />
         <MainContainer>
-          <CreateContainer />
+          <CreatePost />
           <Posts />
         </MainContainer>
-        <Sidebar>
-          <TopTrend>
-            <img
-              src=""
-              alt="top trend img"
-            />
-            <p>#1 tag</p>
-            <span>#2 tag</span>
-            <span>#3 tag</span>
-          </TopTrend>
-        </Sidebar>
+        <TopTagsSidebar />
       </HomeContainer>
     </>
   );
