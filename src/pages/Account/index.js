@@ -1,7 +1,7 @@
 import Header from "../../components/Header";
 import useAuth from "../../hooks/useAuth.js";
 import { useParams, useNavigate } from "react-router-dom";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { Container } from "../../components/AccountSettingsComponents";
 import {
   Button,
@@ -15,6 +15,10 @@ export default function Account() {
   const navigate = useNavigate();
   const { id } = useParams();
   const { user } = useAuth();
+  const [description, setDescription] = useState();
+  const [name, setName] = useState();
+  const [photoURL, setPhotoURL] = useState();
+  const [backgroundURL, setBackgroundURL] = useState();
 
   useEffect(() => {
     if (parseInt(id) !== parseInt(user.userId)) {
@@ -22,7 +26,16 @@ export default function Account() {
     }
   }, []);
 
-  function handleSubmit() {
+  function handleSubmit(e) {
+    e.preventDefault();
+    const userData = {
+      name: name,
+      description: description,
+      photoURL: photoURL,
+      backgroundURL: backgroundURL,
+    };
+    console.log(userData);
+
     alert("Feature Under Construction");
   }
 
@@ -35,10 +48,38 @@ export default function Account() {
           <p>Here you can edit your account!</p>
         </TitleContainer>
         <Form>
-          <Input placeholder="Name" />
-          <Input placeholder="Description" />
-          <Input placeholder="PhotoUrl" />
-          <Input placeholder="BackgroundUrl" />
+          <Input
+            type="text"
+            name="name"
+            placeholder="Display Name"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+            required
+          />
+          <Input
+            type="text"
+            name="Description"
+            placeholder="Description"
+            value={description}
+            onChange={(e) => setDescription(e.target.value)}
+            required
+          />
+          <Input
+            type="text"
+            name="PhotoURL"
+            placeholder="PhotoURL"
+            value={photoURL}
+            onChange={(e) => setPhotoURL(e.target.value)}
+            required
+          />
+          <Input
+            type="text"
+            name="BackgroundURL"
+            placeholder="BackgroundURL"
+            value={backgroundURL}
+            onChange={(e) => setBackgroundURL(e.target.value)}
+            required
+          />
           <Button enabled={true} onClick={handleSubmit}>
             Save Changes <BsArrowRight size="2em" />
           </Button>

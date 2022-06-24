@@ -1,8 +1,8 @@
 import axios from "axios";
 
-// const BASE_URL = "http://localhost:5000";
+const BASE_URL = "http://localhost:5000";
 // const BASE_URL = "https://git.heroku.com/yfidoof.git"
-const BASE_URL = "https://yfidoof.herokuapp.com"
+// const BASE_URL = "https://yfidoof.herokuapp.com"
 
 function createConfig(token) {
   return {

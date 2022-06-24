@@ -36,9 +36,8 @@ const Post = styled.div`
   }
 
   img {
-    height: 400px;
-    width:100%;
-    object-fit: cover;
+     max-height:400px;
+    max-width: 100%;
     border-radius: 10px;
   }
 

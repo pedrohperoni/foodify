@@ -1,16 +1,18 @@
 import styled from "styled-components";
 
 const TrophySpan = styled.span`
-  font-size: ${(props) =>
+  ${
+    "" /* font-size: ${(props) =>
     props.ranking === "first"
       ? "2em"
       : props.ranking === "second"
       ? "1.5em"
-      : "1em"};
+      : "1em"}; */
+  }
+  font-size: 1em;
   display: flex;
   align-items: center;
   justify-content: center;
-  
 
   p {
     display: flex;

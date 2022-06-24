@@ -16,10 +16,9 @@ export default function UserSidebar() {
           </Background>
           <ProfilePhoto src={user.profileUrl} alt="user" />
           <h1>{user.name}</h1>
-          <span>@{user.name.replace(' ', "_")}</span>
+          <span>@{user.handle}</span>
           <p>
-            Entrepreneur. Food practitioner. Student. Travel nerd. Social media
-            aficionado.
+            {user.description}
           </p>
           <FollowContainer>
             <p>

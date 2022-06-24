@@ -8,7 +8,7 @@ display: flex;
 align-items: center;
 justify-content: space-around;
 flex-direction: row;
-height: 80px;
+height: 50px;
 margin-bottom: 10px;
 
 span{
@@ -21,7 +21,7 @@ p{
    align-items: center;
    justify-content: center;
    flex-direction: column;
-   font-size: 1em;
+   font-size: 0.8em;
    font-weight: 300;
 
    strong{

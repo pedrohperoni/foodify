@@ -46,7 +46,6 @@ export default function SignUp() {
     if (profileUrl !== "") {
       data.profileUrl = profileUrl;
     }
-    console.log(data);
     const promise = api.signUp(data);
     promise.then((response) => {
       navigate("/login");

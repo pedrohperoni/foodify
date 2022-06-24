@@ -43,6 +43,8 @@ export default function Login() {
         userId: response.data.userId,
         backgroundUrl: response.data.backgroundUrl,
         profileUrl: response.data.profileUrl,
+        description: response.data.description,
+        handle: response.data.handle
       });
       navigate("/");
     });
