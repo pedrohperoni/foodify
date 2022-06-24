@@ -1,8 +1,8 @@
 import axios from "axios";
 
-const BASE_URL = "http://localhost:5000";
+// const BASE_URL = "http://localhost:5000";
 // const BASE_URL = "https://git.heroku.com/yfidoof.git"
-// const BASE_URL = "https://yfidoof.herokuapp.com"
+const BASE_URL = "https://yfidoof.herokuapp.com"
 
 function createConfig(token) {
   return {
@@ -13,7 +13,7 @@ function createConfig(token) {
 }
 
 async function getFoodData(body, token) {
-   const config = createConfig(token);
+  const config = createConfig(token);
   return await axios.post(`${BASE_URL}/clarifai/food`, body, config);
 }
 
@@ -31,7 +31,7 @@ async function validateJWT(token) {
 }
 
 async function createPost(body, token) {
-   const config = createConfig(token);
+  const config = createConfig(token);
   return await axios.post(`${BASE_URL}/posts/create`, body, config);
 }
 
@@ -44,8 +44,18 @@ async function getTopTags(number) {
 }
 
 async function getRandomUnsplashImage(image, token) {
-   const config = createConfig(token);
- return await axios.post(`${BASE_URL}/unsplash/${image}`, image, config);
+  const config = createConfig(token);
+  return await axios.post(`${BASE_URL}/unsplash/${image}`, image, config);
+}
+
+async function editUserProfile(userId, userData, token) {
+  const config = createConfig(token);
+  return await axios.put(`${BASE_URL}/users/update/${userId}`, userData, config);
+}
+
+async function getUserData(userId, token) {
+  const config = createConfig(token);
+  return await axios.put(`${BASE_URL}/users/${userId}`, {}, config);
 }
 
 const api = {
@@ -57,6 +67,8 @@ const api = {
   getPosts,
   getTopTags,
   getRandomUnsplashImage,
+  editUserProfile,
+  getUserData
 };
 
 export default api;

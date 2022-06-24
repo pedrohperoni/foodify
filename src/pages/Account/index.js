@@ -6,19 +6,22 @@ import { Container } from "../../components/AccountSettingsComponents";
 import {
   Button,
   Form,
+  FormWarning,
   Input,
   TitleContainer,
 } from "../../components/AuthComponents";
 import { BsArrowRight } from "react-icons/bs";
+import api from "../../services/api.js";
 
 export default function Account() {
   const navigate = useNavigate();
   const { id } = useParams();
-  const { user } = useAuth();
+  const { user, auth, userData, logout } = useAuth();
   const [description, setDescription] = useState();
   const [name, setName] = useState();
   const [photoURL, setPhotoURL] = useState();
   const [backgroundURL, setBackgroundURL] = useState();
+  const [handle, setHandle] = useState();
 
   useEffect(() => {
     if (parseInt(id) !== parseInt(user.userId)) {
@@ -28,15 +31,23 @@ export default function Account() {
 
   function handleSubmit(e) {
     e.preventDefault();
-    const userData = {
+
+    const userChanges = {
       name: name,
       description: description,
-      photoURL: photoURL,
-      backgroundURL: backgroundURL,
+      profileUrl: photoURL,
+      backgroundUrl: backgroundURL,
+      handle: handle,
     };
-    console.log(userData);
-
-    alert("Feature Under Construction");
+    const promise = api.editUserProfile(user.userId, userChanges, auth);
+    promise.then(() => {
+      alert("Faca login para que as mudancas ocoram");
+      logout();
+      navigate("/");
+    });
+    promise.catch(() => {
+      alert("Oops, parece que houve um erro! Tente Novamente");
+    });
   }
 
   return (
@@ -78,6 +89,14 @@ export default function Account() {
             placeholder="BackgroundURL"
             value={backgroundURL}
             onChange={(e) => setBackgroundURL(e.target.value)}
+            required
+          />
+          <Input
+            type="text"
+            name="handle"
+            placeholder="@"
+            value={handle}
+            onChange={(e) => setHandle(e.target.value)}
             required
           />
           <Button enabled={true} onClick={handleSubmit}>

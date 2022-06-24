@@ -14,7 +14,7 @@ export default function Posts() {
     promise.catch((error) => {
       console.error(error);
     });
-  }, []);
+  }, [posts]);
 
   return (
     <>

@@ -36,7 +36,6 @@ export default function Login() {
     };
     const promise = api.login(data);
     promise.then((response) => {
-      console.log(response.data);
       login(response.data.token);
       userData({
         name: response.data.name,
@@ -49,7 +48,6 @@ export default function Login() {
       navigate("/");
     });
     promise.catch((error) => {
-      console.log(error);
     });
   }
 
