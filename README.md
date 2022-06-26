@@ -39,5 +39,6 @@ This project is fully functional but it is still a work in progress, some featur
 ## Demo
 <p float="left" align="center">
 <img src="https://github.com/pedrohperoni/foodify/blob/main/github/foodifypost.gif" alt="ss" height="350">
+  
   <img src="https://raw.githubusercontent.com/pedrohperoni/foodify/main/github/foodifylogin.gif" alt="ss" height="350">
 </p>
