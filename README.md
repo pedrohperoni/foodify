@@ -3,7 +3,7 @@
   <a href="https://github.com/pedrohperoni/foodify">
     <img src="https://raw.githubusercontent.com/pedrohperoni/foodify/main/github/logo.png" alt="Logo">
   </a>
-   <h3 align="center">A fullstack application build with <a href="https://reactjs.org/">React</a>, <a href="https://nodejs.org/en/">nodeJS</a> and <a href="https://www.prisma.io/ ">Prisma, </a>powered by <a href="https://www.clarifai.com/">Clarifai</a></br> Share your favourite dishes with the world</h3>
+   <h3 align="center">A fullstack application build with <a href="https://reactjs.org/">React</a>, <a href="https://nodejs.org/en/">nodeJS</a> and <a href="https://www.prisma.io/ ">Prisma, </a>powered by <a href="https://www.clarifai.com/">Clarifai</a></br></br> Share your favourite dishes with the world</h3>
   
   <p align="center"><a href="https://yfidoof.vercel.app/">Live App </a>
 </br>This project has a back-end <a href="https://github.com/pedrohperoni/foodify-api">repository</a></p>
