@@ -3,11 +3,11 @@
   <a href="https://github.com/pedrohperoni/foodify">
     <img src="https://raw.githubusercontent.com/pedrohperoni/foodify/main/github/logo.png" alt="Logo">
   </a>
-   <h3 align="center">A fullstack application build with <a href="https://reactjs.org/">React</a>, <a href="https://nodejs.org/en/">nodeJS</a> and <a href="https://www.prisma.io/ ">Prisma, </a>powered by <a href="https://www.clarifai.com/">Clarifai</a></br></br> Share your favourite dishes with the world</h3>
+   <h2 align="center">A fullstack application build with <a href="https://reactjs.org/">React</a>, <a href="https://nodejs.org/en/">nodeJS</a> and <a href="https://www.prisma.io/ ">Prisma, </a>powered by <a href="https://www.clarifai.com/">Clarifai</a></h2><h3 align="center">Share your favourite dishes with the world</h2>
   
 
 <p align="center">This project has a back-end <a href="https://github.com/pedrohperoni/foodify-api">repository</a></p>
-  </br><p align="center"><a href="https://yfidoof.vercel.app/">Live App </a></p>
+<p align="center"><a href="https://yfidoof.vercel.app/">Live App </a></p>
 
 ## About
 <p>Foodify is a social network where you can share your favourite dishes with the world, an API will identify the ingredients present in the image that the user submits and it will automatically create tags and a title</p>
