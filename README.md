@@ -9,7 +9,7 @@
 </br>This project has a back-end <a href="https://github.com/pedrohperoni/foodify-api">repository</a></p>
 
 ## About
-<p>Foodify is a social network where you can share your favourite dishes with the world, an API will automatically identify the ingredients present in the image that the user submits and create tags and a title</p>
+<p>Foodify is a social network where you can share your favourite dishes with the world, an API will identify the ingredients present in the image that the user submits and it will automatically create tags and a title</p>
   
 
 ## Project Status
