@@ -23,6 +23,7 @@ This project is fully functional but it is still a work in progress, some featur
 * Users will be able to filter by hashtag and/or user
 * Drag and drop of images (dropzone, created, not integrated)
 * Store images on a Supabase bucket
+* E2E tests
 * Any suggestions? Create an [issue](https://github.com/pedrohperoni/foodify/issues)
 
 ## Technologies Used
